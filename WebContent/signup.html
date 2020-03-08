@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+<link
+	href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+	rel="stylesheet">
+<script
+	src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/Animazioni.js" defer></script>
+<script type="text/javascript" src="js/newUserControl.js" defer></script>
+<script type="text/javascript" src="js/signUpInteraction.js" defer></script>
+
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/signup.css" />
+<script type="text/javascript" src="../js/createButtons.js" defer></script>
+
+<link rel="icon" href="css/img/favicon.png">
+<meta charset="utf-8">
+
+<title>The Smart Cleaner - Sign Up</title>
+</head>
+
+<body class="signupPage">
+	<h1 class="stp_title" id="greentext">The Smart Cleaner</h1>
+
+	<div class="card_wrapper">
+		<div class="signupCard">
+			<h2 class="card_title">Sign Up</h2>
+			<div class="errorBox"></div>
+
+			<form id="userinfo" action="Register" method="POST"
+				enctype="multipart/form-data">
+				<div class="form__group">
+					<input pattern=".{1,45}" title="Please don't exceed 45 chars"
+						name="username" type="text" id="username" class="form__field"
+						placeholder="Username" required> <label for="username"
+						class="form__label">Username</label>
+				</div>
+
+				<div class="form__group">
+					<input pattern=".{1,45}" title="Please don't exceed 45 chars"
+						name="pwd" type="password" id="pwd" class="form__field"
+						placeholder="Password" required> <label for="password"
+						class="form__label">Password</label>
+				</div>
+				<div class="form__group">
+					<input pattern=".{1,45}" title="Please don't exceed 45 chars"
+						name="pwd_check" type="password" id="repeatpwd"
+						class="form__field" placeholder="Repeat password" required>
+					<label for="password" class="form__label">Repeat password</label>
+				</div>
+				<div class="form__group">
+					<input pattern=".{1,45}" title="Please don't exceed 45 chars"
+						name="email" type="email" id="email" class="form__field"
+						placeholder="E-mail" required> <label for="email"
+						class="form__label">E-mail</label>
+				</div>
+				<br>
+				<div class="radio_container">
+
+
+					<div class="mdc-form-field">
+						<div class="mdc-radio">
+							<input class="mdc-radio__native-control" type="radio"
+								id="radio-1" name="radios" value="0" />
+
+							<div class="mdc-radio__background">
+								<div class="mdc-radio__outer-circle"></div>
+								<div class="mdc-radio__inner-circle"></div>
+							</div>
+
+							<label id="radiolbl1" for="radio-1" class="labelradio">Player</label>
+
+						</div>
+					</div>
+
+					<div class="mdc-form-field">
+						<div class="mdc-radio">
+							<input class="mdc-radio__native-control" type="radio"
+								id="radio-2" name="radios" value="1" />
+
+							<div class="mdc-radio__background">
+								<div class="mdc-radio__outer-circle"></div>
+								<div class="mdc-radio__inner-circle"></div>
+							</div>
+
+							<label id="radiolbl2" for="radio-2" class="labelradio">Automatic system</label>
+
+
+						</div>
+					</div>
+				</div>
+
+
+				<br>
+
+				<div class="form__group" id="fileInput">
+					<input type='file' accept="image/*" class="form__field" name="user_image_input"
+						id="user_image_input" /> <label for="user_image_input"
+						class="form__label">Profile picture</label>
+				</div>
+
+				<br/>
+
+				<input id="submitBtn" type="submit"
+					class="effettoripple mdc-button mdc-button--raised" value="Sign Up"></input>
+			</form>
+
+			<br> <a href="login.html" class="singInLink">Login</a>
+
+		</div>
+
+	</div>
+
+
+
+
+</body>
+</html>

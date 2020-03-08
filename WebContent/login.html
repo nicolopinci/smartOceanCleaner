@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link href = "https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel = "stylesheet">
+  <script src = "https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type = "text/javascript" src = "js/Animazioni.js" defer></script>
+  <link rel = "stylesheet" type = "text/css" href = "css/reset.css"/>
+  <link rel = "stylesheet" type = "text/css" href = "css/style.css"/>
+  <link rel = "icon" href="css/img/favicon.png">
+  
+  <meta charset = "utf-8">
+
+  <title>The Smart Cleaner - Login</title>
+</head>
+
+<body class="loginPage">
+  <h1 class="stp_title">The Smart Cleaner</h1>
+  <br>
+  
+  <a href="team.html" class="team"><img src="css/img/team.png" title="Our team"></a>
+  
+  <div class="card_wrapper">
+    <div class="loginCard">
+      <h2 class="card_title">Login</h2>
+      <form action="CheckLogin" method="POST">
+        <div class="form__group">
+          <input pattern=".{1,45}" title="Please don't exceed 45 chars" name="username" type="text" id="username" class="form__field" placeholder="Username" required>
+          <label for="username" class="form__label">Username</label>
+        </div>
+
+        <div class="form__group">
+          <input pattern=".{1,45}" title="Please don't exceed 45 chars" name="pwd" type="password" id="pwd" class="form__field" placeholder="Password" required>
+          <label for="password" class="form__label">Password</label>
+        </div>
+        <br/>
+        <br>
+        <input type="submit" class="effettoripple mdc-button mdc-button--raised" value="Login"></input>
+      </form>
+      <br>
+      <a href="signup.html" class="singInLink">Sign Up</a>
+
+    </div>
+  </div>
+</body>
+</html>

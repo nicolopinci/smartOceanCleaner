@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link
+	href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+	rel="stylesheet">
+<script
+	src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script
+	src="https://unpkg.com/material-components-web/dist/material-components-web.min.js"></script>
+  <script type = "text/javascript" src = "js/Animazioni.js" th:src = "@{/js/Animazioni.js}" defer></script>
+  <link rel = "stylesheet" type = "text/css" href = "css/reset.css" th:href = "@{css/reset.css}"/>
+  <link rel = "stylesheet" type = "text/css" href = "css/style.css" th:href = "@{css/style.css}"/>
+  <link rel = "icon" href="css/img/favicon.png" th:href = "@{css/img/favicon.png}">
+    <script type = "text/javascript" src = "../js/createButtons.js" th:src = "@{/js/createButtons.js}" defer></script>
+  	    <script type = "text/javascript" src = "../js/createProfileLogo.js" th:src = "@{/js/createProfileLogo.js}" defer></script>
+      <script type = "text/javascript" src = "js/editUserControl.js" th:src = "@{/js/editUserControl.js}"  defer></script>
+  
+  <meta charset = "utf-8">
+
+  <title>The Smart Cleaner - Edit profile</title>
+</head>
+
+<body class="editPage">
+  <h1 class="stp_title">The Smart Cleaner</h1>
+  <br>
+  <div class="card_wrapper">
+    <div class="editCard">
+      <h2 class="card_title">Profile editor</h2>
+      
+      <div class="errorBox"></div>
+      
+      <form id="userinfo" action="EditProfile" method="POST" enctype="multipart/form-data">
+        <div class="form__group">
+          <input pattern=".{1,45}" title="Please don't exceed 45 chars" name="username" type="text" id="username" class="form__field" placeholder="Username" th:value="${username}" required>
+          <label for="username" class="form__label">Username</label>
+        </div>
+
+        <div class="form__group">
+          <input pattern=".{1,45}" title="Please don't exceed 45 chars" name="pwd" type="password" id="pwd" class="form__field" placeholder="Password" th:value="${password}" required>
+          <label for="password" class="form__label">Password</label>
+        </div>
+        
+        <div class="form__group">
+          <input pattern=".{1,45}" title="Please don't exceed 45 chars" name="repeat" type="password" id="repeatpwd" class="form__field" placeholder="Repeat password" th:value="${password}" required>
+          <label for="repeat" class="form__label">Repeat password</label>
+        </div>
+
+        <div class="form__group">
+          <input pattern=".{1,45}" title="Please don't exceed 45 chars" name="email" type="email" id="email" class="form__field" placeholder="Email" th:value="${email}" required>
+          <label for="email" class="form__label">Email</label>
+        </div>
+
+							
+        <div th:if="${isWorker}" class="form__group">
+          <input name="pp" type="file" accept="image/*" id="pp" class="form__field" placeholder="Profile picture">
+          <label for="pp" class="form__label">Profile picture</label>
+        </div>
+
+        <br/>
+        <br>
+                
+        <input id="submitBtn" type="submit" class="effettoripple mdc-button mdc-button--raised" value="Edit"></input>
+      </form>
+
+    </div>
+  </div>
+</body>
+</html>

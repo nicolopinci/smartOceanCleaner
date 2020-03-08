@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+<link
+	href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+	rel="stylesheet">
+<script
+	src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script
+	src="https://unpkg.com/material-components-web/dist/material-components-web.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="css/reset.css"
+	th:href="@{css/reset.css}" />
+<link rel="stylesheet" type="text/css" href="css/style.css"
+	th:href="@{css/style.css}" />
+<link rel="icon" href="css/img/favicon.png"
+	th:href="@{css/img/favicon.png}">
+
+<script type="text/javascript" src="../js/createButtons.js"
+	th:src="@{/js/createButtons.js}" defer></script>
+<script type="text/javascript" src="../js/createProfileLogo.js"
+	th:src="@{/js/createProfileLogo.js}" defer></script>
+	<script type="text/javascript" src="../js/enlargeImage.js"
+	th:src="@{/js/enlargeImage.js}" defer></script>
+
+<meta charset="utf-8">
+
+<title>The Smart Cleaner - Sort the garbage!</title>
+</head>
+
+<body class="annotatePage">
+	<h1 class="stp_title">The Smart Cleaner</h1>
+	<br>
+	<div class="card_wrapper">
+		<div class="editCard">
+			<h2 class="card_title">Sort the garbage!</h2>
+			<form action="Annotate" method="POST">
+
+				<img th:src="@{GetImage(idi=${idi})}" id="annImm"/>
+				
+
+				<div class="form__group">
+					<div class="tooltip">
+
+						<select id="notes" name="notes" class="form__field">
+							<option value="plastic">Plastic</option>
+							<option value="paper">Paper</option>
+							<option value="metal">Metal</option>
+							<option value="other">Other</option>
+							
+						</select>
+
+						<div class="right">
+							<img src="css/img/trust.jpg" />
+							<div class="text-content">
+								<h3>Material</h3>
+								<ul>
+									<li>Can you sort this object?</li>
+									<li>Try to guess the right material!</li>
+								</ul>
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+
+
+
+
+				<input id="idi" name="idi" type="hidden" th:value="${idi}" /> <br />
+
+				<br> <input type="submit"
+					class="effettoripple mdc-button mdc-button--raised"
+					value="Sort!"></input>
+			</form>
+
+		</div>
+	</div>
+</body>
+</html>

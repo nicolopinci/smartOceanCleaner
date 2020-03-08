@@ -1,0 +1,256 @@
+/* This StyleSheet rules are applied to the statistics page */
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+/* Class for the Body of the page */
+.StatisticsPage{
+  background-image: url("img/blueMountains.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  padding-top: 5%;
+  text-align: center;
+  color: white;
+  font-family: 'Poiret One', cursive;
+}
+
+.StatisticsPage p {
+	color: white;
+	font-size: 100%;
+}
+/* Class for the main title of the page */
+.title {
+  font-size: 200%;
+  margin-bottom: 5%;
+}
+
+.imgLocation {
+	height: auto;
+}
+
+/* Class for the secondary titles */
+.secondTitle{
+  font-size: 250%;
+  font-weight: bold;
+}
+
+/* Class for the less important titles */
+.thirdTitle{
+  font-size: 150%;
+  margin-bottom: 2%;
+  color: white;
+}
+
+/* Class for the cards area */
+.statistics {
+  height: 200px;
+  width: 800px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-top: 2%;
+  border-radius: 15px;
+  background: rgba(54, 54, 54, 0.4);
+  display: inline-block;
+}
+
+/* Class for the little cards */
+.data{
+  height: 200px;
+  width: 200px;
+  margin-left: 50px;
+  float: left;
+  border-radius: 200px;
+  background: rgba(54, 54, 54, 0.5);
+}
+
+/* Class for the description of the card */
+.descriptor{
+  width: 100%;
+  height: 50%;
+  line-height: 140px;
+  font-size: 150%;
+}
+
+/* Class for the numbers */
+.numbers{
+  width: 100%;
+  height: 50%;
+  line-height: 70px;
+  font-size: 250%;
+  font-weight: bold;
+}
+
+/* ID which identifies the locations statistic */
+#locations{
+  background: rgba(255, 51, 51, 0.75);
+}
+
+/* ID which identifies the images statistic */
+#images{
+  background: rgba(26, 117, 255, 0.75);
+}
+
+/* ID which identifies the annotations statistic */
+#annotations{
+  background: rgba(0, 128, 0, 0.75);
+}
+
+/* Interruption line */
+hr{
+  border: 0.5px solid white;
+  width: 70%;
+}
+
+/* Class for the cards area */
+.average {
+  height: auto;
+  width: 800px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-top: 5%;
+  border-radius: 15px;
+  background: rgba(54, 54, 54, 0.4);
+  display: inline-block;
+}
+
+/* Description of the average statistic */
+.average .descriptor{
+  width: 80%;
+  height: 100px;
+  float: left;
+  line-height: 100px;
+}
+
+/* Numbers of the average statistic */
+.average .numbers{
+  width: 20%;
+  height: 100px;
+  float: right;
+  line-height: 100px;
+}
+
+/* Area which contains the Button */
+.button{
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+
+/* Button Element */
+div.button > button{
+  background-color: rgba(0, 153, 255, 0.7); /* Bright Blue*/
+  background-color: rgba(0, 102, 204, 0.7); /* Dark Blue*/
+  color: white;
+  font-size: 25px;
+  font-family: 'Poiret One', cursive;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+/* When the mouse goes over the Button */
+div.button > button:hover{
+  background-color: rgba(0, 153, 255, 0.7);
+  box-shadow: 6px 10px 10px 0px rgba(0,0,0,0.6); /* define the shadow structure */
+  cursor: pointer;
+}
+
+/* When the Button is clicked */
+div.button > button:active{
+  background-color: rgba(0, 153, 255, 0.7);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.7);
+  transform: translateZ()(4px); /* moves the element on the z-axis (towards the user) */
+}
+
+/* When the Button is Selected */
+div.button > button:focus{
+  outline: 0;
+}
+
+/* Class for the area of the conflicts */
+.conflicts{
+  height: auto;
+  width: 800px;
+  background: rgba(54, 54, 54, 0.4);
+  margin-bottom: 3%;
+  padding-top: 2%;
+  border-radius: 15px;
+  display: none;
+  font-size: 80%;
+}
+
+/* Title for the conflicts */
+.conflicts > .thirdTitle{
+  font-size: 200%;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 5%;
+}
+
+/* Class for the wrappers of the cards */
+.cardWrapper{
+  height: auto;
+  width: 90%;
+  padding-top: 2%;
+  display: inline-block;
+  overflow-x: auto;
+  white-space: nowrap; /* never start a new line unless there is <br> */
+  overflow-y: hidden;
+}
+
+/* Class for each signle conflict */
+.tile{
+  height: 100px;
+  background: rgba(54, 54, 54, 0.5);
+  margin-bottom: 4%;
+  border-radius: 15px;
+}
+
+/* Class for the images */
+.immagine{
+  background-image: url("img/favicon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+#imgLocation{
+  font-size: 175%;
+}
+/* Class for the descriptor of each conflict */
+div.tile > p {
+  font-size: 125%;
+  text-align: left;
+  margin-left: 190px;
+  line-height: 100px;
+}
+
+
+.dottedlink {
+	text-decoration: underline;
+	border-bottom: 1px dotted;
+}
+
+.dottedlink:hover {
+	color: lightblue;
+}
+
+/* Paragraph which contains the TagLine */
+#tagLine{
+  font-size: 150%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  position: relative;
+}
+
+/* ID for the word Revolution */
+#greenText{
+  color: #39e600;
+  font-weight: bold;
+}
+
+.statImage {
+	max-height: 100%;
+	padding: 0px;
+}

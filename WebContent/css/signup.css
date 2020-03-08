@@ -1,0 +1,33 @@
+#select_worker_level {
+	display: none;
+	margin-bottom: 20px;
+}
+
+#fileInput_lbl {
+	color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: auto;
+	padding-left: 0;
+	font-size: 20px;
+}
+
+#fileInput_btn {
+	background: rgba(0, 0, 0, 0.4);
+	margin-bottom: 30px;
+	font-family: 'Poiret One', cursive;
+}
+
+#fileInput_btn:hover {
+	background: rgba(0, 200, 190, 0.6);
+	cursor: pointer;
+}
+
+#fileInput {
+	display: none;
+}
+
+:root {
+	--mdc-theme-secondary: white !important;
+}

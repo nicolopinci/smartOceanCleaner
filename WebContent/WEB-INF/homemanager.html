@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link href = "https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel = "stylesheet">
+  <script src = "https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src = "https://unpkg.com/material-components-web/dist/material-components-web.min.js"></script>
+  <script src = "http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type = "text/javascript" src = "../js/Animazioni.js" th:src = "@{/js/Animazioni.js}" defer></script>
+  
+  <link rel = "stylesheet" type = "text/css" href = "../css/reset.css" th:href = "@{css/reset.css}"/>
+  <link rel = "stylesheet" type = "text/css" href = "../css/style.css" th:href = "@{css/style.css}"/>
+  <link rel = "stylesheet" type = "text/css" href = "../css/detailpage.css" th:href = "@{css/detailpage.css}"/>
+  
+  <link rel = "icon" href="../css/img/favicon.png" th:href = "@{css/img/favicon.png}">
+  <script type = "text/javascript" src = "../js/createButtons.js" th:src = "@{/js/createButtons.js}" defer></script>
+  	    <script type = "text/javascript" src = "../js/createProfileLogo.js" th:src = "@{/js/createProfileLogo.js}" defer></script>
+  
+
+  <meta charset = "utf-8">
+
+
+
+
+  <title>The Smart Cleaner - Home Page</title>
+</head>
+
+<body class="HomePageManager">
+
+  
+
+  <h1 class="stp_title">The Smart Cleaner</h1>
+
+  <button id="campaignFormButton" type="button" class="stButton">Create a new sorting contest</button>
+
+
+  <div id="campaignForm">
+    <div class="card_wrapper">
+      <div class="card" id="newCampaign_card">
+        <h2 class="card_title">New sorting contest</h2>
+        <form action="CreateCampaign" method="POST">
+          <div class="form__group">
+            <input pattern=".{1,100}" title="Please don't exceed 100 chars" name="campaign_name" type="text" id="campaign_name" class="form__field" placeholder="campaign_name" required>
+            <label for="campaign_name" class="form__label">Contest name</label>
+          </div>
+
+          <div class="form__group">
+            <input pattern=".{1,100}" title="Please don't exceed 100 chars" name="campaign_client" type="text" id="campaign_client" class="form__field" placeholder="campaign_client" required>
+            <label for="campaign_client" class="form__label">Contest responsible</label>
+          </div>
+          <br/>
+          <br>
+          <input type="submit" class="effettoripple mdc-button mdc-button--raised" value="Submit"></input>
+        </form>
+        <br>
+        <button class="effettoripple mdc-button mdc-button--raised" id="cancel_btn" type="button">Cancel</button>
+
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <h2 class="secondTitle" id="campaignTitle">Your contests</h2>
+  <br>
+
+  <div th:unless="${#lists.isEmpty(campaigns)}" th:each="c:${campaigns}" class="card" id="largeCard">
+    <a th:href="@{GoToDetailsPage(idc=${c.ID})}">
+      <img class="largeCard_image" th:src="@{/css/img/favicon.png}" alt="logo">
+      <div class="text_zone">
+        <h3 id="largeCard_title" th:text="${c.name}">Contest name</h3>
+
+      </div>
+    </a>
+  </div>
+  
+  <div th:if="${#lists.isEmpty(campaigns)}" class="card" id="largeCard">
+    
+      <img class="largeCard_image" th:src="@{/css/img/favicon.png}" alt="logo">
+      <div class="text_zone">
+        <h3 id="largeCard_title">You haven't created any contest yet!</h3>
+
+      </div>
+  </div>
+
+
+  <br>
+
+
+
+ 
+
+</body>
+</html>

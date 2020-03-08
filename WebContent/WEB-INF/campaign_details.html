@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" dir="ltr">
+
+<head>
+<link
+	href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+	rel="stylesheet">
+<script
+	src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script
+	src="https://unpkg.com/material-components-web/dist/material-components-web.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/reset.css"
+	th:href="@{css/reset.css}" />
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	th:href="@{css/style.css}" />
+
+<link rel="stylesheet" type="text/css" href="../css/detailpage.css"
+	th:href="@{css/detailpage.css}" />
+
+
+<link rel="icon" href="../css/img/favicon.png"
+	th:href="@{css/img/favicon.png}">
+
+
+
+<script type="text/javascript" src="../js/Animazioni.js"
+	th:src="@{/js/Animazioni.js}" defer></script>
+<script type="text/javascript" src="../js/createButtons.js"
+	th:src="@{/js/createButtons.js}" defer></script>
+<script type="text/javascript" src="../js/createProfileLogo.js"
+	th:src="@{/js/createProfileLogo.js}" defer></script>
+<script type="text/javascript" src="../js/CreateMapButton.js"
+	th:src="@{/js/CreateMapButton.js}" defer></script>
+<script th:if="${!showWizard}" type="text/javascript"
+	src="../js/createStatisticsButton.js"
+	th:src="@{/js/createStatisticsButton.js}" defer></script>
+<script src="https://momentjs.com/downloads/moment.js" defer></script>
+<script th:if="${showWizard}" type="text/javascript"
+	src="../js/setTodayDate.js" th:src="@{/js/setTodayDate.js}" defer></script>
+<script th:if="${showWizard}" type="text/javascript"
+	src="../js/multistepForm.js" th:src="@{/js/multistepForm.js}" defer></script>
+<script type="text/javascript" src="../js/enlargeImage.js"
+	th:src="@{/js/enlargeImage.js}" defer></script>
+<script th:if="${showWizard}" type="text/javascript"
+	src="../js/tellMeWhere.js" th:src="@{/js/tellMeWhere.js}" defer></script>
+
+
+
+
+<meta charset="utf-8">
+
+<title>Contest details</title>
+</head>
+
+<body class="campaign_detail_page">
+	<h1 class="stp_title" id="blacktext">The Smart Cleaner</h1>
+
+	<div class="infoBox">
+		<div class="backgroundInfo"></div>
+		<span class="descr">Contest name</span><br /> <span
+			th:text="${info.name}">Contest Name</span><br /> <br /> <span
+			class="descr">Responsible</span><br /> <span th:text="${info.client}">Responsible</span><br />
+		<br /> <span class="descr">Status</span><br /> <span
+			th:text="${info.status}">status</span>
+
+	</div>
+	<br />
+	<br />
+	<button th:if="${showWizard}" id="newLocationFormButton" type="button"
+		class="stButton">Add an image</button>
+	<br />
+	<br />
+	<a
+		class="effettoripple mdc-button mdc-button--raised mdc-ripple-upgraded"
+		th:href="@{CloseCampaign(idc=${info.ID})}" th:if="${allowClose}"
+		id="closeCampaignButton">Make unavailable</a>
+
+	<a
+		class="effettoripple mdc-button mdc-button--raised mdc-ripple-upgraded"
+		th:href="@{StartCampaign(idc=${info.ID})}" th:if="${startable}"
+		id="startCampaignButton">Make available</a>
+	<br />
+
+	<br />
+	<div th:if="${showWizard}" id="locationWizard">
+		<div class="card_wrapper">
+			<div class="card" id="newLocation_card">
+				<h2 class="card_title">Add an image</h2>
+				<form id="newLocationForm" th:action="@{CreateLocation(idc=${idc})}"
+					method="POST" enctype="multipart/form-data">
+					<div id="firstTab" class="wizard_tab">
+
+
+						<div class="form__group">
+
+							<select id="chooseLocation" name="existingLocation"
+								class="form__field">
+								<option value="def">Create a new location</option>
+								<option th:each="instance : ${locIm}"
+									th:value="${instance.key.ID}" th:text="${instance.key.name}">
+
+
+								</option>
+							</select> <label for="existingLocation" class="form__label">Choose
+								a location</label>
+						</div>
+
+
+						<div id="addNew">
+
+							<div class="form__group">
+								<div class="tooltip">
+
+									<input type="number" id="latitude" min="-90"
+										max="90" step="0.00000000001" class="form__field"
+										placeholder="latitude" name="latitude" required> <label for="latitude"
+										class="form__label">Latitude</label>
+									<div class="right">
+										<img src="css/img/equator.jpg" />
+										<div class="text-content">
+											<h3>Latitude</h3>
+											<ul>
+												<li>Latitude is a geographic coordinate that specifies
+													the north-south position of a point on the Earth's surface.</li>
+												<li>You must express latitude using the signed degree
+													format (e.g. -13.457). Please note that latitude ranges
+													from -90 to 90 degrees.</li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="form__group">
+								<div class="tooltip">
+
+									<input type="number" min="-180" max="180"
+										id="longitude" step="0.00000000001" class="form__field"
+										placeholder="longitude" name="longitude" required> <label
+										for="longitude" class="form__label">Longitude</label>
+									<div class="right">
+										<img src="css/img/globe.jpg" />
+										<div class="text-content">
+											<h3>Longitude</h3>
+											<ul>
+												<li>Longitude is a geographic coordinate that specifies
+													the east-west position of a point on the Earth's surface.</li>
+												<li>You must express latitude using the signed degree
+													format (e.g. -19.729). Please note that longitude ranges
+													from -180 to 180 degrees.</li>
+
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="form__group">
+								<div class="tooltip">
+									<input pattern=".{1,200}" name="location_name" type="text" id="location_name"
+										class="form__field" placeholder="location_name" required>
+
+									<label for="location_name" class="form__label">Location
+										name</label>
+
+									<div class="right">
+										<img src="css/img/locname.jpg" />
+										<div class="text-content">
+											<h3>Location name</h3>
+											<ul>
+												<li>This is the name of your location.</li>
+												<li>You might insert an address (e.g. <em>17, High
+														Street</em>) or another name that clearly identifies the dump.
+												</li>
+												<li>Please don't exceed 200 chars.
+												</li>
+
+											</ul>
+										</div>
+
+									</div>
+								</div>
+
+
+
+							</div>
+
+							<div class="form__group">
+								<div class="tooltip">
+
+									<input  pattern=".{1,200}" title="Please don't exceed 200 chars" name="city" type="text" id="city" class="form__field"
+										placeholder="city" required /> <label for="city"
+										class="form__label">City</label>
+									<div class="right">
+										<img src="css/img/city.jpg" />
+										<div class="text-content">
+											<h3>City</h3>
+											<ul>
+												<li>This is the name of the city where the dump is.</li>
+												<li>You might also insert a village or a town. In case
+													the dump is located outside a residential area, specify
+													this situation in this field.</li>
+													<li>Please don't exceed 200 chars.
+												</li>
+
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+							<div class="form__group">
+								<div class="tooltip">
+
+									<input  pattern=".{1,200}" title="Please don't exceed 200 chars" name="region" type="text" id="region"
+										class="form__field" placeholder="region" required> <label
+										for="region" class="form__label">Region</label>
+									<div class="right">
+										<img src="css/img/region.jpg" />
+										<div class="text-content">
+											<h3>Region</h3>
+											<ul>
+												<li>This is the name of the region where the dump is.</li>
+												<li>Since the concept of region has different meanings,
+													you might insert a geographical region (e.g. Great Lakes
+													Region), the name of an administrative division (e.g.
+													Lombardia) or the name of a State (e.g.
+													Schleswig-Holstein). Please try to be as precise as
+													possible.</li>
+													<li>Please don't exceed 200 chars.
+												</li>
+
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div id="calcLoc"></div>
+						</div>
+
+					</div>
+
+					<div class="wizard_tab">
+						<input name="img" type="file" id="image_input" class="form__field"
+							accept="image/*" required></input>
+					</div>
+
+					<div class="wizard_tab">
+						<div class="form__group">
+							<div class="tooltip">
+
+								<input  pattern=".{1,200}" title="Please don't exceed 200 chars" name="source" type="text" id="source" class="form__field"
+									placeholder="source" required> <label for="source"
+									class="form__label">Source</label>
+
+								<div class="right">
+									<img src="css/img/source.jpg" />
+									<div class="text-content">
+										<h3>Source</h3>
+										<ul>
+											<li>Please indicate how this image has been obtained.</li>
+											<li>Some examples might be "automatic robot", "testing dataset" and "random"</li>
+												<li>Please don't exceed 200 chars.
+												</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+<!-- 									oninput="this.className = this.className.replace(' invalid','')"
+ -->
+						<div class="form__group">
+							<div class="tooltip">
+
+								<input name="date" type="date" id="date" class="form__field"
+									placeholder="date"
+									required> <label for="date" class="form__label">Acquisition
+									date</label>
+								<div class="right">
+									<img src="css/img/date.jpg" />
+									<div class="text-content">
+										<h3>Acquisition date</h3>
+										<ul>
+											<li>This is the date when the picture was taken.</li>
+											<li>You might choose the date writing it manually or
+												clicking on the field. You are not allowed to select a date
+												in the future.</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form__group">
+							<select id="resolution" name="resolution" class="form__field">
+								<option value="low">Low</option>
+								<option value="standard">Standard</option>
+								<option value="high">High</option>
+							</select> <label for="resolution" class="form__label">Image
+								resolution</label>
+
+						</div>
+					</div>
+
+					<br> <input id="idc" name="idc" type="hidden"
+						th:value="${info.ID}" />
+
+					<button class="effettoripple mdc-button mdc-button--raised"
+						id="back_btn" type="button">Previous</button>
+
+					<button class="effettoripple mdc-button mdc-button--raised"
+						id="next_btn" type="button">Next</button>
+					<br /> <br />
+
+					<button class="effettoripple mdc-button mdc-button--raised"
+						id="reset_btn" type="button">Reset</button>
+
+
+					<!-- Circles which indicates the steps of the form: -->
+					<div style="text-align: center; margin-top: 40px;">
+						<span class="step"></span> <span class="step"></span> <span
+							class="step"></span>
+					</div>
+				</form>
+				<br>
+
+			</div>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="newLocations" id="newLocations">
+		<h2 th:unless="${#maps.isEmpty(locIm)}" class="secondTitle">Associated
+			locations</h2>
+		<h2 th:if="${#maps.isEmpty(locIm)}">There are no locations
+			associated to this contest.</h2>
+
+
+		<div th:each="instance : ${locIm}">
+			<h2 th:text="${instance.key.name}" class="thirdTitle">Location
+				name</h2>
+			<div class="cardWrapper">
+
+				<div th:each="img : ${instance.value}" class="newLocations card">
+					<div class="imageDiv">
+
+						<img class="singleImage" th:src="@{GetImage(idi=${img.ID})}" />
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+</body>
+</html>

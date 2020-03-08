@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- This is the page in which a worker can find and join new campaigns
+and in which he can look at the campaigns he has already joined -->
+<html lang="en" dir="ltr">
+
+<head>
+
+<link
+	href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+	rel="stylesheet">
+<script
+	src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script
+	src="https://unpkg.com/material-components-web/dist/material-components-web.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="../css/reset.css"
+	th:href="@{css/reset.css}" />
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	th:href="@{css/style.css}">
+
+<link rel="stylesheet" type="text/css" href="../css/workerstyle.css"
+	th:href="@{css/workerstyle.css}">
+
+<script type="text/javascript" src="../js/buttonEffect.js"
+	th:src="@{js/buttonEffect.js}" defer></script>
+<link rel="icon" href="../css/img/favicon.png"
+	th:href="@{css/img/favicon.png}">
+	  <script type = "text/javascript" src = "../js/createButtons.js" th:src = "@{/js/createButtons.js}" defer></script>
+	    <script type = "text/javascript" src = "../js/createProfileLogo.js" th:src = "@{/js/createProfileLogo.js}" defer></script>
+	  
+	  	   
+<meta charset="UTF-8">
+
+<title>The Smart Cleaner - Worker Home Page</title>
+</head>
+
+<body class="workerPage">
+
+	<h1 class="title">The Smart Cleaner</h1>
+
+
+	<!-- Area for the new campaigns that a worker can join -->
+	<div class="newCampaigns" id="newCampaigns">
+		<h2 th:unless="${#lists.isEmpty(available)}" class="secondTitle">You may be interested in joining...</h2>
+		<h2 th:if="${#lists.isEmpty(available)}">You have already joined all the available contests!</h2>
+		
+		<div class="cardWrapper">
+
+			<div class="newCampaigns card" th:each="a:${available}">
+
+				<div class="imageDiv">
+					<img class="teaImage" th:src="@{css/img/green-tea.png}" th:title="${a.name}"/>
+
+					<div class="descriptor" th:title="${a.name}">
+						<a th:href="@{AssociateCampaign(idc=${a.ID})}"><p th:text="${a.name}" th:title="${a.name}">Contest 1</p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Button which hides the new campaigns and shows the worker's campaigns -->
+	<div class="button">
+		<button type="button" name="campaignsButton" id="button1">YOUR
+			CONTESTS</button>
+	</div>
+
+	<!-- Area for the worker's campaigns -->
+	<div class="campaigns" id="campaigns">
+		<h2 th:unless="${#lists.isEmpty(completed)}" class="secondTitle">Your current contests:</h2>
+		<h2 th:if="${#lists.isEmpty(completed)}">There are no new contests here!</h2>
+		
+		<div class="cardWrapper">
+
+			<div th:each="c:${completed}" class="tile">
+				<div class="immagine" th:title="${c.name}"> </div>
+				<a th:href="@{Map(idc=${c.ID})}">
+				<p th:text="${c.name}" title="Campaign" th:title="${c.name}">Contest 1</p>
+				</a>
+				
+			</div>
+
+
+		</div>
+	</div>
+
+	
+
+ 
+
+</body>
+</html>

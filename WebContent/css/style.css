@@ -1,0 +1,868 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+body {
+	background-attachment: fixed;
+}
+
+p {
+	overflow: hidden;
+	text-overflow: ellipsis; /* if the text is too long, show dots */
+	white-space: nowrap; /* don't start a new line */
+}
+
+
+.loginPage {
+	background-image: url("img/sunset.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+	padding-top: 5%;
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+}
+
+.editPage {
+	background-image: url("img/redmount.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+	padding-top: 5%;
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+}
+
+.annotatePage {
+	background-image: url("img/annotate.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+	padding-top: 5%;
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+}
+
+.errorPage {
+	background-image: url("img/redmount.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+	padding-top: 5%;
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+}
+
+.HomePageManager {
+	background-image: url("img/green.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+	padding-top: 5%;
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+}
+
+.signupPage {
+	background-image: url("img/signup.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+	padding-top: 5%;
+	text-align: center;
+	font-family: 'Poiret One', cursive;
+}
+
+h2 {
+	margin-top: 40px;
+	font-size: 250%;
+	color: #fff;
+	margin-bottom: 40px;
+}
+
+h3 {
+	font-size: 200%;
+	color: #000;
+}
+
+p {
+	font-size: 150%;
+	color: black;
+}
+
+.stp_title {
+	font-size: 400%;
+	color: white;
+	margin-bottom: 5%
+}
+
+button {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+#cancel_btn {
+	background: rgba(100, 50, 100, 0.3);
+}
+
+#campaignForm {
+	margin-bottom: 20px;
+	display: none;
+}
+
+#greentext {
+	color: #39e600;
+}
+
+h1#greentext {
+	margin-bottom: 2%;
+}
+
+span#greentext {
+	font-weight: bold;
+}
+
+#signin_motto {
+	margin-bottom: 1%;
+}
+
+#largeCard {
+	flex-wrap: wrap; /* flexible items are allowed to wrap */
+	justify-content: space-around; /* Items are positioned with space before, between, and after the lines */
+	background: rgba(255, 255, 255, 0.9);
+	height: 100px;
+	width: 60%;
+	margin-bottom: 40px;
+	padding-left: 40px;
+}
+
+#largeCard_title {
+	text-align: center;
+	color: #000;
+	margin-top: 23px;
+}
+
+.largeCard_image {
+	height: 80px;
+	width: 80px;
+	float: left;
+}
+
+.text_zone {
+	margin-right: 140px;
+}
+
+.card_title {
+	font-size: 200%;
+	color: white;
+	margin-bottom: 5%
+}
+
+.card_wrapper {
+	text-align: center;
+	align-items: center;
+}
+
+.card {
+	padding-top: 2%;
+	border-radius: 5px;
+	display: inline-block;
+	background: rgba(54, 54, 54, 0.3);
+	height: 300px;
+	width: 500px;
+}
+
+#small_card {
+	height: 200px;
+	width: 200px;
+}
+
+#newCampaign_card {
+	height: auto;
+	padding: 30px;
+	width: auto;
+}
+
+.loginCard {
+	padding-top: 2%;
+	border-radius: 5px;
+	display: inline-block;
+	background: rgba(54, 54, 54, 0.3);
+	height: 330px;
+	width: 500px;
+}
+
+.editCard {
+	padding-top: 2%;
+	border-radius: 5px;
+	display: inline-block;
+	background: rgba(54, 54, 54, 0.3);
+	width: 500px;
+	height: auto;
+	padding-bottom: 20px;
+}
+
+.errorCard {
+	padding-top: 2%;
+	border-radius: 5px;
+	display: inline-block;
+	background: rgba(54, 54, 54, 0.6);
+	height: 290px;
+	width: 500px;
+}
+
+.errorCard>p {
+	color: white;
+}
+
+.signupCard {
+	padding-top: 2%;
+	border-radius: 5px;
+	display: inline-block;
+	background: rgba(100, 100, 100, 0.6);
+	padding-bottom: 2%;
+	width: 500px;
+}
+
+.form__group {
+	position: relative;
+	padding: 15px 0 0;
+	margin-top: 10px;
+}
+
+.form__field {
+	font-family: inherit;
+	width: 75%;
+	border: 0;
+	border-bottom: 1px solid #F8F8F5;
+	outline: 0;
+	font-size: 16px;
+	color: #F8F8F5;
+	padding: 7px 0;
+	background: transparent;
+	transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+	color: transparent; /* Don't show the placeholder (there are tooltip boxes, by the way) */
+}
+
+.form__field:placeholder-shown ~ .form__label { /* The form__label is sibling of an element with placeholder "shown" */
+	font-size: 16px;
+	cursor: text;
+	top: 20px;
+}
+
+label, .form__field:focus ~ .form__label { /* Focus on the field */
+	padding-left: 65px;
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 12px;
+	color: #fff;
+}
+
+.labelradio {
+	padding-left: 30px;
+	display: relative;
+	font-size: 14px;
+	top: 10px;
+	color: #fff;
+}
+
+.radio_container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin-bottom: 0px;
+	margin-right: 60px;
+}
+
+.form__field:focus ~ .form__label {
+	color: #F8F8F5;
+}
+
+.form__field:focus {
+	padding-bottom: 6px;
+	border-bottom: 2px solid #F8F8F5;
+}
+
+.mdc-button.mdc-button--raised {
+	margin-top: 0px;
+	background: rgb(255, 255, 255, 0.4);
+	color: #fff;
+	align-items: center;
+}
+
+a.singInLink {
+	color: #fff;
+}
+
+a:hover {
+	color: #dad;
+}
+
+.float {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	background-color: #0C9;
+	color: #FFF;
+	border-radius: 50px;
+	text-align: center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.team {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	background-color: rgba(0,0,0,0);
+	color: rgba(0, 0, 0, 0);
+	border-radius: 50px;
+	text-align: center;
+	box-shadow: 2px 2px 3px #999;
+	top: 40px;
+	right: 40px;
+	z-index: 1000;
+}
+
+.team > img {
+	object-fit: contain;
+	width: 60px;
+	height: 60px;
+}
+
+#editUser_float {
+	top: 40px;
+	right: 120px;
+	background: rgb(150, 255, 255, 0.4);
+	z-index: 1000;
+}
+
+#editUser_float:hover, #map_float:hover, #logout_float:hover, #stat_float:hover { /* Backgroudn of round buttons */
+	background: rgb(255, 255, 255, 0.4);
+}
+
+#map_float {
+	top: 120px;
+	right: 40px;
+	background: rgb(255, 70, 255, 0.4);
+	z-index: 1000;
+}
+
+#stat_float {
+	top: 120px;
+	right: 120px;
+	background: rgb(10, 70, 255, 0.4);
+	z-index: 1000;
+}
+
+#logout_float {
+	top: 40px;
+	right: 40px;
+	background: rgb(255, 255, 100, 0.4);
+	z-index: 1000;
+}
+
+#userPic_float {
+	top: 40px;
+	left: 40px;
+}
+
+.float img {
+	align: center;
+	max-width: 40px;
+	max-height: 40px;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+.float #userpic {
+	object-fit: cover; /* Otherise it is deformed */
+	align: center;
+	height: 60px;
+	width: 60px;
+	border-radius: 100%;
+	margin-left: 0px;
+	margin-top: 0px;
+	max-width: 60px;
+	max-height: 60px;
+}
+
+.smallicon {
+	width: 40px;
+	top: 20px;
+}
+
+.map_wrapper {
+	text-align: center;
+	align-items: center;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#mapid { /* Fill the page with the map */
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.imageDiv {
+	width: 200px;
+	height: 100%;
+	float: left;
+}
+
+.singleImage {
+	width: 95%;
+	height: 95%;
+	object-fit: contain;
+}
+
+.leftImage {
+	padding-left: 10px;
+	padding-top: 10px;
+	object-fit: contain;
+	max-width: 300px;
+	max-height: 180px;
+	float: left;
+}
+
+.imAnUsTile {
+	min-height: 200px;
+	background: rgba(54, 54, 54, 0.5);
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+.imAnUsTile p {
+	overflow: visible;
+}
+
+.imNumAnTile {
+	background: rgba(54, 54, 54, 0.5);
+	margin-bottom: 20px;
+	border-radius: 5px;
+	min-height: 200px;
+}
+
+.teaImage {
+	max-width: 95%;
+	max-height: 150px;
+}
+
+.annInfo {
+	padding-top: 30px;
+	padding-bottom: 50px;
+	color: white;
+}
+
+.textDiv {
+	padding-left: 300px;
+}
+
+.radioTitle {
+	color: white;
+	font-family: 'Poiret One', cursive;
+	font-size: 80%;
+}
+
+.username {
+	color: white;
+	font-family: 'Poiret One', cursive;
+	font-weight: bold;
+	font-size: 16px;
+	padding-left: 20px;
+	word-break: break-all; /* New line even if a word has to be interrupted */
+	white-space: normal;
+	text-align: left;
+}
+
+.notes {
+	color: white;
+	font-family: 'Poiret One', cursive;
+	font-size: 14px;
+	text-align: left;
+	padding-left: 25px;
+	padding-right: 40px;
+	/*word-break: break-all;*/
+	word-wrap: break-word;
+	white-space: normal;
+	padding-top: 5px;
+}
+
+.allTheImages {
+	height: auto;
+	width: 100%;
+	background: rgba(54, 54, 54, 0.3);
+	margin-top: 100px;
+	margin-bottom: 3%;
+	padding-top: 2%;
+	border-radius: 5px;
+}
+
+.newCampaigns a, .tile a, .newCampaigns p, .tile p {
+	color: white;
+	text-decoration: none;
+	height: 100px;
+}
+
+#largeCard a:hover {
+	font-weight: bold;
+}
+
+.newCampaigns a:hover, .tile a:hover {
+	font-weight: bold;
+}
+
+#largeCard a, #largeCard p {
+	color: black;
+	text-decoration: none;
+}
+
+.greeting {
+	left: 110px;
+	top: 60px;
+	background-color: black;
+	padding: 4px;
+	color: white;
+	display: block;
+	position: fixed;
+}
+
+.infoBox {
+	display: inline-block;
+	padding: 40px;
+	position: relative;
+	text-align: left;
+}
+
+.backgroundInfo { /* Background of the info box */
+	background-color: rgba(54, 54, 54, 0.4);
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+}
+
+.infoBox span {
+	color: white;
+	font-size: 35px;
+}
+
+.infoBox .descr {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+::-moz-selection {
+	background: rgba(0, 0, 0, 0.35);
+	color: white;
+}
+
+::selection {
+	background: rgba(0, 0, 0, 0.35);
+	color: white;
+}
+
+/* enlarged image */
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1000; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+	 
+}
+
+/* Modal Content (Image) */
+.modal-content {
+	margin: auto;
+	display: block;
+	max-width: 90%;
+	max-height: 90%;
+	margin-top: -30px;
+	
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+	margin: auto;
+	display: block;
+	max-width: 90%;
+	max-height: 90%; text-align : center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
+	text-align: center;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+	animation-name: zoom;
+	animation-duration: 0.6s;
+}
+
+@
+keyframes zoom {
+	from {transform: scale(0)
+}
+
+to {
+	transform: scale(1)
+}
+
+}
+
+/* The Close Button */
+.close {
+	position: absolute;
+	top: 15px;
+	left: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+
+}
+
+img {
+	cursor: pointer;
+}
+
+.errorPage p {
+	text-overflow: clip;
+}
+
+.absence {
+	text-size: 200%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#validityID, #trustID, #chooseLocation, #resolution {
+	   -moz-appearance: none;
+	   appearance: none;
+	   -webkit-appearance: none;
+	    background:url("img/dropdown.png") no-repeat right center transparent;
+	   background-size: 20px 37px;
+	   height: 40px;
+}
+
+select option {
+	background-color: black;
+	color: white;
+	padding: 8px;
+	line-height: 17px;
+}
+
+
+/* Dimension of the scrollbar */
+.cardWrapper::-webkit-scrollbar {
+  width: 20px;
+  height: 8px;
+}
+
+/* Track of the scrollbar */
+.cardWrapper::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px grey;
+  border-radius: 10px;
+}
+
+/* Handle of the scrollbar */
+.cardWrapper::-webkit-scrollbar-thumb {
+  background: rgba(256, 256, 256, 0.5);
+  /*background: rgba(204, 153, 255, 0.8); rosa*/
+  border-radius: 10px;
+}
+
+/* Activated scrollbar */
+.cardWrapper::-webkit-scrollbar-thumb:active {
+  background: rgba(256, 256, 256, 0.8);
+  /*background: #bf80ff; rosa*/
+  box-shadow: inset 0 0 5px grey;
+}
+
+
+/* Dimension od the scrollbar */
+body::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(54, 54, 54, 0.7);;
+}
+
+/* Track of the scrollbar */
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px grey;
+  border-radius: 10px;
+}
+
+/* Handle of the scrollbar */
+body::-webkit-scrollbar-thumb {
+  background: rgba(256, 256, 256, 0.6);
+  border-radius: 10px;
+}
+
+/* Activated scrollbar */
+body::-webkit-scrollbar-thumb:active {
+  background: rgba(256, 256, 256, 0.8);
+}
+
+.errorBox {
+	background: rgba(100,0,0,0.5);
+	font-weight: bold;
+	line-height: 25px;
+}
+
+#ctext {
+	padding-top: 25vh;
+	line-height: 5vh;
+	padding-bottom: 15vh;
+	color: white;
+	font-size: 5vh;
+}
+
+#byes {
+	margin-right: 10px;
+	margin-left: 10px;
+	height: 10vh;
+	width: 10vw;
+}
+
+#bno {
+	margin-right: 10px;
+	margin-left: 10px;
+	height: 10vh;
+	width: 10vw;
+}
+
+
+.mapPage {
+ 
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+
+}
+
+.stButton {
+  background: #297a10;
+  background-image: -webkit-linear-gradient(top, #297a10, #0d7d09);
+  background-image: -moz-linear-gradient(top, #297a10, #0d7d09);
+  background-image: -ms-linear-gradient(top, #297a10, #0d7d09);
+  background-image: -o-linear-gradient(top, #297a10, #0d7d09);
+  background-image: linear-gradient(to bottom, #297a10, #0d7d09);
+  -webkit-box-shadow: 0px 0px 16px #666666;
+  -moz-box-shadow: 0px 0px 16px #666666;
+  box-shadow: 0px 0px 16px #666666;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 15px 20px 15px 20px;
+  text-decoration: none;
+  font-family: 'Poiret One', cursive;
+  font-weight: 600;
+  max-width: 180px;
+}
+
+.stButton:hover {
+  background: #0e4211;
+  background-image: -webkit-linear-gradient(top, #0e4211, #0b3605);
+  background-image: -moz-linear-gradient(top, #0e4211, #0b3605);
+  background-image: -ms-linear-gradient(top, #0e4211, #0b3605);
+  background-image: -o-linear-gradient(top, #0e4211, #0b3605);
+  background-image: linear-gradient(to bottom, #0e4211, #0b3605);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Tooltips */
+
+
+.tooltip h3 {margin:12px 0; color: white;}
+
+
+.tooltip .right {
+    min-width:200px;
+    max-width:400px;
+    top:50%;
+    left:100%;
+    margin-left:20px;
+    transform:translate(0, -50%); /* "Align" to center it with respect to the field */
+    padding:0;
+    color:#EEEEEE;
+    background-color: rgba(0,0,0, 0.76);
+    font-weight:normal;
+    font-size:15px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    visibility:hidden; opacity:0; transition:opacity 0.8s;
+}
+
+.tooltip:hover .right {
+    visibility:visible; opacity:1;
+}
+
+.tooltip .right img {
+    width:400px;
+    border-radius:8px 8px 0 0;
+}
+.tooltip .text-content {
+    padding:10px 20px;
+}
+
+.tooltip .right i {
+    position:absolute;
+    top:50%;
+    right:100%;
+    margin-top:-12px;
+    width:12px;
+    height:24px;
+    overflow:hidden;
+}
+
+.tooltip .right i::after { /* ::after means it has to be put after .right i */
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:0;
+    top:50%;
+    background-color:#444444;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+
+#annImm {
+	max-width: 75%;
+}

@@ -1,0 +1,174 @@
+/* This StyleSheet rules are applied to the worker page */
+
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+/* Class for the Body of the page */
+.workerPage{
+  background-image: url("img/pink.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: auto;
+  padding-top: 5%;
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+}
+
+/* Class for the main title of the page */
+.title{
+  font-size: 400%;
+  color: white;
+  margin-bottom: 5%
+}
+
+/* Class for the secondary titles */
+.secondTitle{
+  font-size: 200%;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Class for the cards area */
+.newCampaigns {
+  width: 1000px;
+  padding-top: 2%;
+  border-radius: 5px;
+  display: inline-block;
+  background: rgba(54, 54, 54, 0.4);
+}
+
+/* Class for the wrappers of the cards */
+.cardWrapper{
+  max-width: 100%;
+  width: 90%;
+  padding-top: 20px;
+  display: inline-block;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+/* Class for the little cards */
+.card{
+  height: 200px;
+  width: 200px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  background: rgba(54, 54, 54, 0.5);
+}
+
+/* Class for the description of the card */
+.descriptor{
+  color: white;
+  padding: 5%;
+}
+
+.descriptor > p {
+	color: white;
+}
+
+/* Class for the images */
+.immagine{
+  background-image: url("img/favicon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 80%;
+}
+
+/* Class for the area of the Worker's campaigns */
+.campaigns{
+  height: auto;
+  width: 1000px;
+  background: rgba(54, 54, 54, 0.3);
+  margin-top: 100px;
+  margin-bottom: 3%;
+  padding-top: 2%;
+  border-radius: 5px;
+  display: none;
+}
+
+/* Class for the cardWrapper of the Worker's campaigns */
+.campaigns > .cardWrapper{
+  padding-right: 2%;
+  overflow-y: hidden;
+  height: auto;
+}
+
+/* Class for each single Worker's campaign */
+.tile{
+  height: 150px;
+  background: rgba(54, 54, 54, 0.5);
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+/* Class for the images contained in a signle Worker's campaign */
+.tile > .immagine{
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+/* Class for the descriptor of each Worker's campaign */
+div.tile p{
+  font-size: 200%;
+  color: white;
+  text-align: left;
+  margin-left: 38%;
+  margin-right: 5%;
+  padding-top: 7%;
+}
+
+
+/* Area which contains the Button */
+.button{
+  margin-top: 40px;
+}
+
+/* Button Element */
+div.button > button{
+  background-color: #bb99ff; /* Faded Pink*/
+  background-color: rgba(255, 128, 255, 0.7); /* Brigther Pink*/
+  color: white;
+  font-size: 25px;
+  font-family: 'Poiret One', cursive;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+/* When the mouse goes over the Button */
+div.button > button:hover{
+  background-color: rgba(204, 102, 255, 0.7);
+  box-shadow: 6px 10px 10px 0px rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+/* When the Button is clicked */
+div.button > button:active{
+  background-color: rgba(213, 128, 255, 0.7);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.7);
+  transform: translateZ()(4px);
+}
+
+/* When the Button is Selected */
+div.button > button:focus{
+  outline: 0;
+}
+
+/* Paragraph which contains the TagLine */
+#tagLine{
+  font-size: 150%;
+  color: white;
+  margin-top: 5%;
+}
+
+/* ID for the word Revolution */
+#greenText{
+  color: #39e600;
+  font-weight: bold;
+}

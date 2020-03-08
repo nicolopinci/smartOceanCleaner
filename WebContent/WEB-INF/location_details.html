@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en" dir="ltr">
+
+<head>
+<link
+	href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+	rel="stylesheet">
+<script
+	src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+<script
+	src="https://unpkg.com/material-components-web/dist/material-components-web.min.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/Animazioni.js"
+	th:src="@{/js/Animazioni.js}" defer></script>
+<link rel="stylesheet" type="text/css" href="../css/reset.css"
+	th:href="@{css/reset.css}" />
+<link rel="stylesheet" type="text/css" href="../css/style.css"
+	th:href="@{css/style.css}" />
+<link rel="stylesheet" type="text/css" href="../css/workerstyle.css"
+	th:href="@{css/workerstyle.css}">
+<link rel="stylesheet" type="text/css" href="../css/detailpage.css"
+	th:href="@{css/detailpage.css}" />
+<link rel="icon" href="../css/img/favicon.png"
+	th:href="@{css/img/favicon.png}">
+
+<script type="text/javascript" src="../js/createButtons.js"
+	th:src="@{/js/createButtons.js}" defer></script>
+<script type="text/javascript" src="../js/createProfileLogo.js"
+	th:src="@{/js/createProfileLogo.js}" defer></script>
+	<script type="text/javascript" src="../js/enlargeImage.js"
+	th:src="@{/js/enlargeImage.js}" defer></script>
+	<script type="text/javascript" src="../js/adaptImages.js"
+	th:src="@{/js/adaptImages.js}" defer></script>
+
+<meta charset="utf-8">
+
+<title>Location details</title>
+</head>
+
+<body class="location_detail_page">
+	<h1 class="stp_title">The Smart Cleaner</h1>
+
+	<div class="infoBox" th:if="${isAdmin}">
+		<div class="backgroundInfo"></div>
+		
+		<span class="descr">ID</span><br /> <span
+			th:text="${info.ID}">id</span><br /> <br /> 
+			
+		<span class="descr">Vessel name</span><br /> <span
+			th:text="${info.name}">Vessel name</span><br /> <br />
+			
+			 <span
+			class="descr">Latitude</span><br /> 	
+			<span th:text="${info.latitude}">Lat</span><br />
+		<br /> <span class="descr">Longitude</span><br /> <span
+			th:text="${info.longitude}">Lon</span><br /> <br /> <span
+			class="descr">City</span><br /> <span th:text="${info.city}">City</span><br />
+		<br /> <span class="descr">Region</span><br /> <span
+			th:text="${info.region}">Region</span>
+	</div>
+
+
+
+
+	<div class="allTheImages">
+		<h2 class="secondTitle">Associated images:</h2>
+		<div class="cardWrapper">
+
+			<span th:if="${isAdmin}">
+				<div th:each="el:${imAnUs}" class="imAnUsTile">
+
+					<img class="leftImage" th:src="@{GetImage(idi=${el.key.ID})}" />
+
+					<div class="textDiv" th:each="anUs : ${el.value}">
+						<br />
+						<p class="username"
+							th:text="${'On ' + anUs.key.date + ' ' + anUs.value.username + ' classified the image as:'}"></p>
+						<br />
+						<p class="notes">
+						<span th:text="${anUs.key.notes}"></span>
+						</p>
+						<br/>
+					</div>
+
+
+
+
+
+
+				</div>
+			</span> <span th:unless="${isAdmin}">
+
+
+
+				<div th:each="el:${imNumAn}" class="imNumAnTile">
+					<img class="leftImage" th:src="@{GetImage(idi=${el.key.ID})}" />
+					<p th:if="${el.value==0}" class="annInfo"> You may sort this object.<br/>
+					Please be aware that you are allowed to sort it only once.</p><br/>
+					 <a	class="effettoripple mdc-button mdc-button--raised" th:if="${el.value==0}"
+						th:href="@{GoToAnnotationPage(idi=${el.key.ID})}">Sort!</a>
+						<p class="annInfo" th:unless="${el.value==0}">You have already sorted this object.</p>
+				</div>
+
+			</span>
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>
