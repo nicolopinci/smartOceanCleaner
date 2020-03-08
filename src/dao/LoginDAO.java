@@ -61,7 +61,7 @@ public class LoginDAO {
 	public int register(String username, String psw, String email, Integer isAdmin) throws SQLException {
 
 		PreparedStatement pStatement= null;
-		String query = "INSERT INTO user VALUES(0, ?, ?, ?, ?, ?, ?)"; //query
+		String query = "INSERT INTO user VALUES(0, ?, ?, ?, ?, ?, ?, ?)"; //query
 
 		pStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 		pStatement.setString(1, username);
@@ -70,6 +70,7 @@ public class LoginDAO {
 		pStatement.setInt(4, 0);
 		pStatement.setInt(5, isAdmin);
 		pStatement.setInt(6, 0);
+		pStatement.setInt(7, 50);
 		
 		pStatement.executeUpdate();
 		

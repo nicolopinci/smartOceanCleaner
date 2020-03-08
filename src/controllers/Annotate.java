@@ -151,22 +151,29 @@ public class Annotate extends HttpServlet {
 				Integer points;
 				points = uDAO.getProfile(lr.getId()).getPoints();
 				Integer percentage = uDAO.getProfile(lr.getId()).getPercentage();
-				points = points + percentage;
+								
+				Integer numberRobotAnnotations = aDAO.hasRobotAnnotated(idi);
 				
-				Integer totAnnotations = aDAO.countAllAnnotations(annotation.getImage());
-				Integer totMaterialAnnotations = aDAO.countMaterialAnnotations(annotation.getImage(), annotation.getNotes());
-				
-				Integer totUserAnnotations = aDAO.countUserAnnotations(lr.getId()) + 1;
-				Integer currentScore = 0;
-				
-				if(totAnnotations <= 2*totMaterialAnnotations) {
-					currentScore = 100;
+				if(numberRobotAnnotations > 0) {
+					
+					points = points + percentage;
+					
+					Integer totAnnotations = aDAO.countAllAnnotations(annotation.getImage());
+					Integer totMaterialAnnotations = aDAO.countMaterialAnnotations(annotation.getImage(), annotation.getNotes());
+					
+					Integer totUserAnnotations = aDAO.countUserAnnotations(lr.getId()) + 1;
+					Integer currentScore = 0;
+					
+					if(totAnnotations <= 2*totMaterialAnnotations) {
+						currentScore = 100;
+					}
+					
+					uDAO.updatePercentage(lr.getId(), percentage);
+					uDAO.updatePoints(lr.getId(), points);
+					
+					percentage = (currentScore + percentage*totUserAnnotations)/(totUserAnnotations+1);
 				}
-				
-				percentage = (currentScore + percentage*totUserAnnotations)/(totUserAnnotations+1);
-				
-				uDAO.updatePercentage(lr.getId(), percentage);
-				uDAO.updatePoints(lr.getId(), points);
+	
 			} catch (SQLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

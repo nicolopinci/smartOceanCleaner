@@ -110,6 +110,7 @@ public class Register extends HttpServlet {
 					String fieldValue = item.getString();
 					
 					if(fieldValue.contentEquals("")) {
+						System.out.println("Empty field");
 						response.sendError(401);
 						return;
 					}
@@ -127,6 +128,7 @@ public class Register extends HttpServlet {
 						++fieldCounter;
 
 						if(!repeat.contentEquals(password)) {
+							System.out.println("Password don't match");
 							response.sendError(401);
 							return;
 						}
@@ -136,6 +138,7 @@ public class Register extends HttpServlet {
 						++fieldCounter;
 
 						if(!isValid(email)) {
+							System.out.println("The mail is not valid");
 							response.sendError(401);
 							return;
 						}
@@ -143,6 +146,7 @@ public class Register extends HttpServlet {
 					else if(fieldName.contentEquals("radios")) {
 						userType = Integer.parseInt(fieldValue);
 						if(userType<0 || userType>1) {
+							System.out.println("Wrong user type");
 							response.sendError(401);
 							return;
 						}
@@ -152,11 +156,13 @@ public class Register extends HttpServlet {
 			}
 
 			if(fieldCounter!=5) {
+				System.out.println("Wrong field counter");
 				response.sendError(401);
 				return;
 			}
 			
 			if(imageItem == null && userType == 0) {
+				System.out.println("No image");
 				response.sendError(401);
 				return;
 			}
@@ -168,6 +174,7 @@ public class Register extends HttpServlet {
 				path += "/login.html";
 
 			} catch (SQLException e) { // Unluckily there has been an error...
+				System.out.println("SQL Exception");
 				response.sendError(401);
 				return;
 			}

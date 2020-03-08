@@ -108,7 +108,7 @@ public class LocationDAO {
 			tempLocation.setCity(resultSet.getString("municipality"));
 			tempLocation.setRegion(resultSet.getString("region"));
 			
-			Integer factor = countHumanEvaluations(tempLocation.getID())/countRobotEvaluations(tempLocation.getID());
+			Integer factor = countHumanEvaluations(tempLocation.getID())-countRobotEvaluations(tempLocation.getID());
 						
 			if(factor <= 1) {
 				redLocations.add(tempLocation);

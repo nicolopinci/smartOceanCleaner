@@ -31,6 +31,7 @@ import dao.AnnotationDAO;
 import dao.CampaignDAO;
 import dao.ImageDAO;
 import dao.LocationDAO;
+import dao.UserDAO;
 import dto.LoginResult;
 import utils.Status;
 import utils.TypeOfUser;
@@ -121,9 +122,11 @@ public class GoToLocationDetails extends HttpServlet {
 				}
 				else
 				{
+					UserDAO uDAO = new UserDAO(connection);
+					
 					Integer numberRobotAnnotations = aDAO.hasRobotAnnotated(image.getID());
 					
-					if(numberRobotAnnotations != 0) {
+					if(numberRobotAnnotations != 0 || uDAO.getProfile(lr.getId()).getIsRobot()) {
 						imNumAn.put(image, aDAO.hasUserAlreadyAnnotated(image.getID(), lr.getId()));
 					}
 				}
