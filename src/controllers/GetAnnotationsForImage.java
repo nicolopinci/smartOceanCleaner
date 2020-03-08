@@ -100,7 +100,7 @@ public class GetAnnotationsForImage extends HttpServlet {
 			if(lr.getUserType().equals(TypeOfUser.manager)) {
 				for (Map.Entry<Annotation, User> entry : annotUser.entrySet()) {
 					usAn.put(entry.getValue().getUsername(), entry.getKey()); // prepare the structure for JSON
-					// Note: passwords and email addresses are not sent, sine they might be considered personal data
+					// Note: passwords and email addresses are not sent, since they might be considered personal data
 					// and they are not shown
 				}
 			}
