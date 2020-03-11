@@ -384,5 +384,25 @@ public class CampaignDAO {
 
 		return number;
 	}
+	
+	public int selectCampaignByImageID(int idi) throws SQLException {
+
+		int number = 0;
+		String query = "SELECT campaign.ID AS cid FROM (campaign JOIN campaign_vessel JOIN image) WHERE (campaign.ID = campaign_vessel.ID_Campaign AND campaign_vessel.ID_Vessel = image.ID_Vessel AND image.ID_Image = ?)";
+		ResultSet result = null;
+		PreparedStatement pStatement = null;
+
+		pStatement = connection.prepareStatement(query);
+		pStatement.setInt(1, idi);
+
+
+		result = pStatement.executeQuery();
+		result.next();
+		number = result.getInt("cid");
+
+		result.close();		
+
+		return number;
+	}
 }
 

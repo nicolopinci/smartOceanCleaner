@@ -6,9 +6,7 @@ import java.util.Map;
 
 import beans.Annotation;
 import beans.User;
-import utils.ExpLevel;
 import utils.Trust;
-import utils.Validity;
 
 public class AnnotationDAO {
 
@@ -133,7 +131,7 @@ public class AnnotationDAO {
 		pStatement.setInt(1, idi);
 		pStatement.setInt(2, idw);
 
-		Integer hasAnn = 1;
+		Integer hasAnn = 0;
 		
 		result = pStatement.executeQuery();
 		while(result.next()) {

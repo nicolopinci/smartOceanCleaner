@@ -59,9 +59,7 @@ public class ImageDAO {
 			pStatement.setInt(3, Resolution.toInt(img.getResolution()));
 			pStatement.setString(4, img.getSource());
 			pStatement.executeUpdate(); //esegue l'update
-			
-			System.out.println(pStatement);
-			
+						
 			ResultSet tableKey = pStatement.getGeneratedKeys(); //ottiene il result set dell'inserimento
 			tableKey.next(); //va all'unico elemento
 			Integer id =  tableKey.getInt(1); //estrae il numero id e lo restituisce
@@ -94,6 +92,34 @@ public class ImageDAO {
 		result.close();		
 		
 		return idl;
+	}
+
+	
+	public List<Image> allImagesByCampaign(int idc) throws SQLException {
+
+		String query = "SELECT image.ID_Image AS idi, image.ID_Vessel AS idv, image.source AS source, image.resolution AS res, image.date AS date FROM (campaign_vessel JOIN image) WHERE (campaign_vessel.ID_Campaign = ? AND campaign_vessel.ID_Vessel = image.ID_Vessel)";
+		
+		List<Image> images = new ArrayList<Image>(); //the list that will be returned
+		ResultSet result = null;
+
+		PreparedStatement pStatement = connection.prepareStatement(query);
+		pStatement.setInt(1, idc);
+				
+		result = pStatement.executeQuery();
+		while(result.next()) {
+			Image tempImage = new Image(); //a temp Image object that will be used to store single rows of the resultSet
+
+			tempImage.setID(result.getInt("idi")); 
+			tempImage.setLocation_id(result.getInt("idv"));
+			tempImage.setSource(result.getString("source"));
+			tempImage.setResolution(Resolution.convertInt(result.getInt("res")));
+			tempImage.setDate(result.getDate("date"));
+			images.add(tempImage); // the image is added to the list
+		}
+		result.close(); //closing the result set
+				
+		pStatement.close();
+		return images;	
 	}
 
 }

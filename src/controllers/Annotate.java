@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -15,7 +17,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.Annotation;
+import beans.Image;
 import dao.AnnotationDAO;
+import dao.CampaignDAO;
+import dao.ImageDAO;
 import dao.UserDAO;
 import dto.LoginResult;
 import utils.Trust;
@@ -168,10 +173,11 @@ public class Annotate extends HttpServlet {
 						currentScore = 100;
 					}
 					
+					percentage = (currentScore + percentage*totUserAnnotations)/(totUserAnnotations+1);
+
 					uDAO.updatePercentage(lr.getId(), percentage);
 					uDAO.updatePoints(lr.getId(), points);
 					
-					percentage = (currentScore + percentage*totUserAnnotations)/(totUserAnnotations+1);
 				}
 	
 			} catch (SQLException e1) {
@@ -192,7 +198,35 @@ public class Annotate extends HttpServlet {
 			response.sendError(403);
 			return;
 		}
-		response.sendRedirect("GoToHomeWorker"); // ok, now choose something else to do
+		
+		CampaignDAO cDAO = new CampaignDAO(connection);
+		ImageDAO iDAO = new ImageDAO(connection);
+		
+		Integer selectedID = null;
+
+		try {
+			Integer cid = cDAO.selectCampaignByImageID(idi);
+			List<Image> allCampaignImages = new ArrayList<Image>();
+			
+			allCampaignImages = iDAO.allImagesByCampaign(cid);
+						
+			for(Image img:allCampaignImages) {
+				if(aDAO.hasRobotAnnotated(img.getID())!=0 && aDAO.hasUserAlreadyAnnotated(img.getID(), lr.getId())==0) {
+					selectedID = img.getID();
+					System.out.println(selectedID);
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if(selectedID != null) {
+			response.sendRedirect("GoToAnnotationPage?idi=" + selectedID); // ok, now choose something else to do
+		}
+		else {
+			response.sendRedirect("GoToHomeWorker");
+		}
 		return;
 	}
 }
