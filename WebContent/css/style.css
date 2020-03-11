@@ -14,7 +14,7 @@ p {
 
 
 .loginPage {
-	background-image: url("img/sunset.jpg");
+	background-image: url("img/sailboats.svg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: auto;
@@ -24,7 +24,7 @@ p {
 }
 
 .editPage {
-	background-image: url("img/redmount.svg");
+	background-image: url("img/chalutier.svg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: auto;
@@ -34,7 +34,7 @@ p {
 }
 
 .annotatePage {
-	background-image: url("img/annotate.svg");
+	background-image: url("img/childish.svg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: auto;
@@ -54,7 +54,7 @@ p {
 }
 
 .HomePageManager {
-	background-image: url("img/green.jpg");
+	background-image: url("img/dreamscape.svg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: auto;
@@ -467,7 +467,8 @@ a:hover {
 }
 
 .teaImage {
-	max-width: 95%;
+	max-width: 90%;
+	height: 100%;
 	max-height: 150px;
 }
 

@@ -207,7 +207,7 @@ div.button > button:focus{
 
 /* Class for the images */
 .immagine{
-  background-image: url("img/favicon.png");
+  background-image: url("img/favicon.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 20%;

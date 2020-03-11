@@ -23,8 +23,8 @@ and in which he can look at the campaigns he has already joined -->
 
 <script type="text/javascript" src="../js/buttonEffect.js"
 	th:src="@{js/buttonEffect.js}" defer></script>
-<link rel="icon" href="../css/img/favicon.png"
-	th:href="@{css/img/favicon.png}">
+<link rel="icon" href="../css/img/waves.svg"
+	th:href="@{css/img/waves.svg}">
 	  <script type = "text/javascript" src = "../js/createButtons.js" th:src = "@{/js/createButtons.js}" defer></script>
 	    	  <script type = "text/javascript" src = "../js/createScoreButton.js" th:src = "@{/js/createScoreButton.js}" defer></script>
 	    
@@ -51,7 +51,7 @@ and in which he can look at the campaigns he has already joined -->
 			<div class="newCampaigns card" th:each="a:${available}">
 
 				<div class="imageDiv">
-					<img class="teaImage" th:src="@{css/img/green-tea.png}" th:title="${a.name}"/>
+					<img class="teaImage" th:src="@{css/img/whale.svg}" th:title="${a.name}"/>
 
 					<div class="descriptor" th:title="${a.name}">
 						<a th:href="@{AssociateCampaign(idc=${a.ID})}"><p th:text="${a.name}" th:title="${a.name}">Contest 1</p></a>
