@@ -4,7 +4,7 @@
 
 /* Class for the Body of the page */
 .workerPage{
-  background-image: url("img/pink.jpg");
+  background-image: url("img/pink.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
