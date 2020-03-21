@@ -460,7 +460,7 @@ a:hover {
 }
 
 .imNumAnTile {
-	background: rgba(54, 54, 54, 0.5);
+	background: rgba(0, 0, 0, 0.5);
 	margin-bottom: 20px;
 	border-radius: 5px;
 	min-height: 200px;
@@ -514,12 +514,14 @@ a:hover {
 
 .allTheImages {
 	height: auto;
-	width: 100%;
-	background: rgba(54, 54, 54, 0.3);
+	width: 70%;
+	background: rgba(54, 54, 54, 0.7);
 	margin-top: 100px;
 	margin-bottom: 3%;
 	padding-top: 2%;
 	border-radius: 5px;
+	position: relative;
+	left: 15%;	
 }
 
 .newCampaigns a, .tile a, .newCampaigns p, .tile p {

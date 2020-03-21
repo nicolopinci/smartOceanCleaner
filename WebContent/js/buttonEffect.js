@@ -19,7 +19,7 @@ function showNewCampaigns(){
 function showCampaigns(){
 	document.getElementById('newCampaigns').style.display = "none";
 	var button = document.getElementById('button1');
-	button.innerHTML = "NEW CAMPAIGNS";
+	button.innerHTML = "NEW CONTESTS";
 	document.getElementById('campaigns').style.display = "inline-block"; // inline-block is used to show elements side-by-side
 
 	//Switch the Response to the Button Click Event

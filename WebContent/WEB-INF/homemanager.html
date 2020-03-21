@@ -65,7 +65,7 @@
 
   <div th:unless="${#lists.isEmpty(campaigns)}" th:each="c:${campaigns}" class="card" id="largeCard">
     <a th:href="@{GoToDetailsPage(idc=${c.ID})}">
-      <img class="largeCard_image" th:src="@{/css/img/favicon.png}" alt="logo">
+      <img class="largeCard_image" th:src="@{/css/img/waves.svg}" alt="logo">
       <div class="text_zone">
         <h3 id="largeCard_title" th:text="${c.name}">Contest name</h3>
 
@@ -75,7 +75,7 @@
   
   <div th:if="${#lists.isEmpty(campaigns)}" class="card" id="largeCard">
     
-      <img class="largeCard_image" th:src="@{/css/img/favicon.png}" alt="logo">
+      <img class="largeCard_image" th:src="@{/css/img/waves.svg}" alt="logo">
       <div class="text_zone">
         <h3 id="largeCard_title">You haven't created any contest yet!</h3>
 
