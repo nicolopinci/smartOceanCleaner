@@ -1,11 +1,20 @@
 # Smart Ocean Cleaner
 
+## Screenshots
+![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/Signup.png)
+![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/Login.png)
+![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/PlayerHome.png)
+![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/ManagerHome.png)
+![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/editProfile.png)
+![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/contestDetails.png)
+![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/locationDetails.png)
+![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/mapVessels.png)
+![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/Sort .png)
+
 ## Presentation video
 The tool usage is presented by the following video: https://www.youtube.com/watch?v=MzTk3LZYG8s.
-Alternatively, it is possible to run the software code, that has been developed and configured using:
-* Eclipse EE
-* Tomcat server
-* MySQL Workbench
+
+Alternatively, it is possible to run the software code, that has been developed and configured using Eclipse EE, Tomcat and MySQL workbench.
 In order to run the code on the local Tomcat server, it is necessary to import the project in Eclipse EE, configure a Tomcat server (for instance, it is possible to use localhost to run it locally, and an adequate port could be 8080 or 8081, so that the tool could be accessed in the browser by typing localhost:8080/smartOceanCleaner/ or localhost:8081/smartOceanCleaner/ respectively).
 MySQL Workbench should also be configured by creating a database schema according to the configuration available in web.xml. It is possible to create the database by using the following code:
 
