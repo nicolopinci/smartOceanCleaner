@@ -1,15 +1,17 @@
 # Smart Ocean Cleaner
 
 ## Screenshots
-![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/Signup.png)
-![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/Login.png)
-![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/PlayerHome.png)
-![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/ManagerHome.png)
-![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/editProfile.png)
-![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/contestDetails.png)
-![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/locationDetails.png)
-![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/mapVessels.png)
-![](https://github.com/nicolopinci/smartOceanCleaner/tree/master/screenshots/Sort .png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/Signup.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/Login.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/PlayerHome.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/ManagerHome.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/editProfile.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/contestDetails.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/locationDetails.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/mapVessels.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/Sort.png)
+
+
 
 ## Presentation video
 The tool usage is presented by the following video: https://www.youtube.com/watch?v=MzTk3LZYG8s.
