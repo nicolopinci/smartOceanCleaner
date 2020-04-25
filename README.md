@@ -1,24 +1,14 @@
 # Smart Ocean Cleaner
 
-## Screenshots
-![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/Signup.png)
-![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/Login.png)
-![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/PlayerHome.png)
-![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/ManagerHome.png)
-![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/editProfile.png)
-![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/contestDetails.png)
-![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/locationDetails.png)
-![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/mapVessels.png)
-![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/Sort.png)
-
-
-
-## Presentation video
+## Tool presentation and installation
 The tool usage is presented by the following video: https://www.youtube.com/watch?v=MzTk3LZYG8s.
 
 Alternatively, it is possible to run the software code, that has been developed and configured using Eclipse EE, Tomcat and MySQL workbench.
 In order to run the code on the local Tomcat server, it is necessary to import the project in Eclipse EE, configure a Tomcat server (for instance, it is possible to use localhost to run it locally, and an adequate port could be 8080 or 8081, so that the tool could be accessed in the browser by typing localhost:8080/smartOceanCleaner/ or localhost:8081/smartOceanCleaner/ respectively).
 MySQL Workbench should also be configured by creating a database schema according to the configuration available in web.xml. It is possible to create the database by using the following code:
+
+<details>
+<summary>Show the code</summary>
 
 ```
 CREATE DATABASE `smartCleanerDB` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
@@ -106,8 +96,23 @@ CREATE TABLE `player_campaign` (
 
 
 ```
-
+</details>
 In a real-world scenario, the system could be installed on a central server and accessed by every computer connected to the Internet network by typing the web application address (for instance, www.smartoceancleaner.org).
+
+
+## Screenshots
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/Signup.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/Login.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/PlayerHome.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/ManagerHome.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/editProfile.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/contestDetails.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/locationDetails.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/mapVessels.png)
+![](https://raw.githubusercontent.com/nicolopinci/smartOceanCleaner/master/screenshots/Sort.png)
+
+
+
 
 ## The context
 With rapid industrialization, waste is becoming one of the most relevant issues to deal with. In particular, plastic has become the most commonly used material in the production of millions of products. Such overuse of plastic in today’s society has become a major environmental threat to oceanic space. Every year almost 8 million tons of plastic is dumped in the oceans, which is equivalent to dumping a whole truck of waste into the oceans every minute. Thus, the aquatic ecosystem, as a whole, is at risk of becoming over-contaminated over the years.
