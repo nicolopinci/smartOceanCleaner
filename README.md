@@ -97,7 +97,7 @@ CREATE TABLE `player_campaign` (
 
 ```
 </details>
-In a real-world scenario, the system could be installed on a central server and accessed by every computer connected to the Internet network by typing the web application address (for instance, www.smartoceancleaner.org).
+In a real-world scenario, the system could be installed on a central server and accessed by every device connected to the Internet network by typing the web application address (for instance, www.smartoceancleaner.org).
 
 
 ## Screenshots
